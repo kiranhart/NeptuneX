@@ -1,0 +1,450 @@
+guis:
+  ores:
+    size: 9
+    title: "&b&lMined &3&lOres"
+    slots:
+      1:
+        type: "COAl_ORE"
+        item: "COAL_ORE:0"
+        name: "&b&lMined &6&l{amount} &3&lCoal Ore"
+        lore:
+          - "&7Nice to know how much you mined."
+      2:
+        type: "IRON_ORE"
+        item: "IRON_ORE:0"
+        name: "&b&lMined &6&l{amount} &3&LIron Ore"
+        lore:
+          - "&7Nice to know how much you mined."
+      3:
+        type: "GOLD_ORE"
+        item: "GOLD_ORE:0"
+        name: "&b&lMined &6&l{amount} &3&LGold Ore"
+        lore:
+          - "&7Nice to know how much you mined."
+      4:
+        type: "DIAMOND_ORE"
+        item: "DIAMOND_ORE:0"
+        name: "&b&lMined &6&l{amount} &3&lDiamond Ore"
+        lore:
+          - "&7Nice to know how much you mined."
+      5:
+        type: "REDSTONE_ORE"
+        item: "REDSTONE_ORE:0"
+        name: "&b&lMined &6&l{amount} &3&lRedstone Ore"
+        lore:
+          - "&7Nice to know how much you mined."
+      6:
+        type: "QUARTZ_ORE"
+        item: "QUARTZ_ORE:0"
+        name: "&b&lMined &6&l{amount} &3&LQuartz Ore"
+        lore:
+          - "&7Nice to know how much you mined."
+  freeze:
+    title: "&b&lYou're &3&lFrozen"
+    size: 9
+    fill:
+      filler:
+        item: "STAINED_GLASS_PANE:0"
+        name: "&6&lL&f, &cYou got frozen!"
+        lore:
+          - "&7:D"
+    slots:
+      5:
+        item: "STAINED_GLASS_PANE:14"
+        name: "&c&lOh No, You're Frozen!"
+        lore:
+          - "&7Please Join Our Discord: <TheLink>"
+          - "&bLogging out will result in a ban."
+
+withdraw-numbers:
+  min-money-withdraw: 10
+  max-money-withdraw: 1000000
+  min-exp-withdraw: 10
+  max-exp-withdraw: 25000
+
+banknote:
+  signed:
+    item: "PAPER:0"
+    name: "&b&lBank Note &7(Right Click)"
+    lore:
+      - "&3Value &f{value}"
+      - "&3Signer &7{signer}"
+  admin:
+    item: "PAPER:0"
+    name: "&b&lBank Note &7(Right Click)"
+    lore:
+      - "&3Value &f{value}"
+xpbottle:
+  signed:
+    item: "EXP_BOTTLE:0"
+    name: "&b&lEXP Bottle &7(Right Click)"
+    lore:
+      - "&3Value &f{value}"
+      - "&3Withdrawn by &7{signer}"
+  admin:
+    item: "EXP_BOTTLE:0"
+    name: "&b&lEXP Bottle &7(Right Click)"
+    lore:
+      - "&3Value &f{value}"
+
+#Armor Break
+armorbreak:
+  alert-title: true
+
+#Disabled Crafting#
+disabled-crafting:
+  - "HOPPER:0"
+  - "GOLDEN_APPLE:1"
+
+#Mobs spawned from spawners
+#will have this amount of health.
+custom-mob-health:
+  enabled: true
+  mobs:
+    IRON_GOLEM: 2.0
+
+#Auto Lapis
+auto-lapis-to-enchantment-tables: true
+
+#Elevator
+elevator:
+  enabled: true
+  top-block: "STONE_PLATE:0"
+  bottom-block: "QUARTZ_BLOCK:0"
+  ascend-sound: "BAT_TAKEOFF"
+  descend-sound: "PLAYER_SMALL_FALL"
+
+#Economy
+sellchest:
+  enabled: true
+
+#Cobweb
+#This is prevent users from placing more than
+#the set amount of cob webs on the same y level.
+limit-cobweb-on-y:
+  enabled: true
+  max-cobweb-per-y: 5
+
+#Good o'l GenBuckets
+genbuckets:
+  item: "LAVA_BUCKET:0"
+  name: "&3&lGen&b&lBucket &7(Right-Click)"
+  lore:
+    - "&7Place this at the y-level you wish"
+    - "&7to start generating from, higher the better"
+    - ""
+    - "&b&bMaterial&f: &e&l{material}"
+    - ""
+
+staff-mode:
+  slot-item:
+    launch-compass:
+      item: "COMPASS:0"
+      name: "&B&lLaunch &3&lForward"
+      lore:
+        - "&7Right-Click to launch forward"
+    teleport:
+      item: "NETHER_STAR:0"
+      name: "&B&lRandom &3&lTeleport"
+      lore:
+        - "&7Right-Click to teleport to"
+        - "&7a random non-staff player."
+    vanish-on:
+      item: "INK_SACK:10"
+      name: "&A&LToggle Vanish Off"
+      lore:
+        - "&7Right-Click to turn vanish off"
+    vanish-off:
+      item: "INK_SACK:8"
+      name: "&c&LToggle Vanish On"
+      lore:
+        - "&7Right-Click to turn vanish on"
+    cps:
+      item: "DIAMOND_SWORD:0"
+      name: "&B&lCPS &3&LCheck"
+      lore:
+        - "&7Right-Click a player to test"
+        - "&7there clicks per second."
+    freeze-rod:
+      item: "BLAZE_ROD:0"
+      name: "&B&lFreeze &3&lRod"
+      lore:
+        - "&7Right-Click a player to toggle"
+        - "&7freeze and or off for them."
+    examine:
+      item: "ARROW:0"
+      name: "&B&lExamine &3&LPlayer"
+      lore:
+        - "&7Right-Click a player to"
+        - "&7open up their inventory."
+    ride:
+      item: "SADDLE:0"
+      name: "&B&lRide"
+      lore:
+        - "&7Right-Click a player to"
+        - "&7mount them, just for fun right?"
+
+delays:
+  heal: 10
+  feed: 5
+
+#Cooldowns
+cooldowns:
+  god-apple:
+    enabled: true
+  golden-apple:
+    enabled: true
+    time: 10 #In Seconds
+  enderpearl:
+    enabled: true
+
+#Potion Command Level
+potion-commands:
+  nightvision: 1
+  speed: 2
+  regen: 1
+  jumpboost: 2
+  absorption: 3
+
+#Player Vaults
+player-vaults:
+  default-vault-size: 54
+  default-select-menu-size: 54
+  cancel-word: "cancel"
+  vault-title: "&bVault&3"
+  icon-selection:
+    title: "&7Select Vault Icon"
+    size: 54 #Must be a multiple of 9 (max is 54)
+    data:
+      1:
+        item: "DIAMOND_HELMET:0"
+        lore:
+          - "&7Click to select material."
+      2:
+        item: "DIAMOND_CHESTPLATE:0"
+        lore:
+          - "&7Click to select material."
+      3:
+        item: "DIAMOND_LEGGINGS:0"
+        lore:
+          - "&7Click to select material."
+      4:
+        item: "DIAMOND_BOOTS:0"
+        lore:
+          - "&7Click to select material."
+      5:
+        item: "BOW:0"
+        lore:
+          - "&7Click to select material."
+      6:
+        item: "POTION:16421"
+        lore:
+          - "&7Click to select material."
+      7:
+        item: "SUGAR:0"
+        lore:
+          - "&7Click to select material."
+      8:
+        item: "ENDER_PEARL:0"
+        lore:
+          - "&7Click to select material."
+      9:
+        item: "MOB_SPAWNER:0"
+        lore:
+          - "&7Click to select material."
+      10:
+        item: "BOOK:0"
+        lore:
+          - "&7Click to select material."
+      11:
+        item: "TNT:0"
+        lore:
+          - "&7Click to select material."
+      12:
+        item: "STONE_SLAB2:0"
+        lore:
+          - "&7Click to select material."
+      13:
+        item: "IRON_BLOCK:0"
+        lore:
+          - "&7Click to select material."
+      14:
+        item: "GOLD_BLOCK:0"
+        lore:
+          - "&7Click to select material."
+      15:
+        item: "DIAMOND_BLOCK:0"
+        lore:
+          - "&7Click to select material."
+      16:
+        item: "NETHER_BRICK:0"
+        lore:
+          - "&7Click to select material."
+      17:
+        item: "NETHERRACK:0"
+        lore:
+          - "&7Click to select material."
+      18:
+        item: "ANVIL:0"
+        lore:
+          - "&7Click to select material."
+      19:
+        item: "PAPER:0"
+        lore:
+          - "&7Click to select material."
+      20:
+        item: "CHEST:0"
+        lore:
+          - "&7Click to select material."
+      21:
+        item: "ENDER_CHEST:0"
+        lore:
+          - "&7Click to select material."
+      22:
+        item: "SMOOTH_BRICK:0"
+        lore:
+          - "&7Click to select material."
+      23:
+        item: "SNOW:0"
+        lore:
+          - "&7Click to select material."
+      24:
+        item: "SOUL_SAND:0"
+        lore:
+          - "&7Click to select material."
+      25:
+        item: "QUARTZ_BLOCK:0"
+        lore:
+          - "&7Click to select material."
+      26:
+        item: "DIAMOND_SWORD:0"
+        lore:
+          - "&7Click to select material."
+      27:
+        item: "DIAMOND_AXE:0"
+        lore:
+          - "&7Click to select material."
+      28:
+        item: "DIAMOND_PICKAXE:0"
+        lore:
+          - "&7Click to select material."
+      29:
+        item: "DIAMOND_SPADE:0"
+        lore:
+          - "&7Click to select material."
+      30:
+        item: "DIAMOND_HOE:0"
+        lore:
+          - "&7Click to select material."
+      31:
+        item: "ICE:0"
+        lore:
+          - "&7Click to select material."
+      32:
+        item: "PACKED_ICE:0"
+        lore:
+          - "&7Click to select material."
+      33:
+        item: "DISPENSER:0"
+        lore:
+          - "&7Click to select material."
+      34:
+        item: "FURNACE:0"
+        lore:
+          - "&7Click to select material."
+      35:
+        item: "HOPPER:0"
+        lore:
+          - "&7Click to select material."
+      36:
+        item: "GLASS:0"
+        lore:
+          - "&7Click to select material."
+      37:
+        item: "SAND:0"
+        lore:
+          - "&7Click to select material."
+      38:
+        item: "SPONGE:0"
+        lore:
+          - "&7Click to select material."
+      39:
+        item: "OBSIDIAN:0"
+        lore:
+          - "&7Click to select material."
+      40:
+        item: "BEDROCK:0"
+        lore:
+          - "&7Click to select material."
+      41:
+        item: "ENCHANTMENT_TABLE:0"
+        lore:
+          - "&7Click to select material."
+      42:
+        item: "CACTUS:0"
+        lore:
+          - "&7Click to select material."
+      43:
+        item: "GLOWSTONE:0"
+        lore:
+          - "&7Click to select material."
+      44:
+        item: "DIAMOND:0"
+        lore:
+          - "&7Click to select material."
+      45:
+        item: "EMERALD:0"
+        lore:
+          - "&7Click to select material."
+      46:
+        item: "GOLD_INGOT:0"
+        lore:
+          - "&7Click to select material."
+      47:
+        item: "IRON_INGOT:0"
+        lore:
+          - "&7Click to select material."
+      48:
+        item: "REDSTONE:0"
+        lore:
+          - "&7Click to select material."
+      49:
+        item: "BUCKET:0"
+        lore:
+          - "&7Click to select material."
+      50:
+        item: "LAVA_BUCKET:0"
+        lore:
+          - "&7Click to select material."
+      51:
+        item: "WATER_BUCKET:0"
+        lore:
+          - "&7Click to select material."
+      52:
+        item: "GOLDEN_APPLE:0"
+        lore:
+          - "&7Click to select material."
+      53:
+        item: "EXP_BOTTLE:0"
+        lore:
+          - "&7Click to select material."
+      54:
+        item: "BED:0"
+        lore:
+          - "&7Click to select material."
+  vault-selection:
+    default-item: "EMERALD:0"
+    title: "&7Neptune Vaults"
+    default-item-name: "&b&lPV #{vaultnumber}"
+    lore:
+      - "&d/pv {vaultnumber}"
+      - ""
+      - "&7Left-Click to enter Vault"
+      - "&7Middle-Click to edit name"
+      - "&7Right-Click to edit icon"
+  locked-item:
+    item: "STAINED_GLASS_PANE:14"
+    name: "&c&lLocked Vault"
+    lore:
+      - "&7You don't have access to open"
+      - "&7this vault currently."
