@@ -1,14 +1,4 @@
-package com.shadebyte.neptunex.api;
-
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Server;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitTask;
+package com.shadebyte.neptunex.api.version;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,6 +10,13 @@ import java.net.URLConnection;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Server;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 
 public class MCUpdate implements Listener {
 

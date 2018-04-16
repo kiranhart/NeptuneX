@@ -206,6 +206,64 @@ potion-commands:
   jumpboost: 2
   absorption: 3
 
+#Bot / Mob Aura Check
+botcheck:
+  #If this is true then the inventory will generate
+  #as much needed items then select a random one, make it glow
+  #the user would then need to select that glowing item to complete the captcha correctly.
+  #if this is false, then it will use the select item method, where out of all the items
+  #that is in the gui, it will pick one, and set the title to: the inventory.title-select-item
+  #the {item} variable is used to tell the player which item to click.
+  use-glow-item: true
+  inventory:
+    title-glow-item: "&6&lSelect the Glowing Item"
+    title-select-item: "&6&lClick the&f: &b&l{item}"
+    size: 36 #The max inventory size you can set is 54 (Multiples of 9: 9, 18, 27, 36, 45, 54)
+  alert-staff-on-fail: true
+  kick-player-on-fail: false
+  kick-message: "&c&lFailed to complete Captcha!"
+  custom-fail-commands:
+    enabled: false
+    commands:
+      - "msg {player} &cYou failed the captcha O_O"
+  material-list:
+    - "APPLE"
+    - "ARROW"
+    - "BAKED_POTATO"
+    - "BEACON"
+    - "BEDROCK"
+    - "BLAZE_ROD"
+    - "BONE"
+    - "BOOK"
+    - "BOW"
+    - "BOWL"
+    - "BREAD"
+    - "BRICK"
+    - "CAKE"
+    - "CARROT_ITEM"
+    - "LEATHER_HELMET"
+    - "LEATHER_CHESTPLATE"
+    - "LEATHER_LEGGINGS"
+    - "LEATHER_BOOTS"
+    - "IRON_HELMET"
+    - "IRON_CHESTPLATE"
+    - "IRON_LEGGINGS"
+    - "IRON_BOOTS"
+    - "GOLD_HELMET"
+    - "GOLD_CHESTPLATE"
+    - "GOLD_LEGGINGS"
+    - "GOLD_BOOTS"
+    - "DIAMOND_HELMET"
+    - "DIAMOND_CHESTPLATE"
+    - "DIAMOND_LEGGINGS"
+    - "DIAMOND_BOOTS"
+    - "COAL"
+    - "DIAMOND"
+    - "GOLD_INGOT"
+    - "MELON"
+    - "EGG"
+    - "PAPER"
+
 #Player Vaults
 player-vaults:
   default-vault-size: 54

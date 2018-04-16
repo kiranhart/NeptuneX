@@ -3,13 +3,25 @@ package com.shadebyte.neptunex.events.player;
 import com.shadebyte.neptunex.Core;
 import com.shadebyte.neptunex.api.packet.NTitle;
 import com.shadebyte.neptunex.enums.Language;
+import com.shadebyte.neptunex.inventory.BotCheckInventory;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerItemBreakEvent;
 
-public class PlayerArmorBreakListener implements Listener{
+public class PlayerArmorBreakListener implements Listener {
+
+    private BotCheckInventory botCheckInventory = new BotCheckInventory();
+
+    @EventHandler
+    public void onChat(AsyncPlayerChatEvent e) {
+        if (e.getMessage().equalsIgnoreCase("captcha")) {
+            e.getPlayer().openInventory(botCheckInventory.getInventory());
+        }
+    }
+
 
     @EventHandler
     public void onArmorBreak(PlayerItemBreakEvent e) {

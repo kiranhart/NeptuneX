@@ -1,4 +1,4 @@
-package com.shadebyte.neptunex.api;
+package com.shadebyte.neptunex.api.version;
 
 import org.bukkit.Bukkit;
 

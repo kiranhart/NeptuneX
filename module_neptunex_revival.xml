@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_neptunex_revival" default="compile.module.neptunex_revival">
+  <dirname property="module.neptunex_revival.basedir" file="${ant.file.module_neptunex_revival}"/>
+  
+  <property name="module.jdk.home.neptunex_revival" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.neptunex_revival" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.neptunex_revival" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.neptunex_revival" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="neptunex_revival.output.dir" value="${module.neptunex_revival.basedir}/bin"/>
+  <property name="neptunex_revival.testoutput.dir" value="${module.neptunex_revival.basedir}/bin"/>
+  
+  <path id="neptunex_revival.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="neptunex_revival.module.production.classpath">
+    <path refid="${module.jdk.classpath.neptunex_revival}"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Spigots/spigot-1.12.1.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Economy/Vault.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/MassiveCore.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/FactionsUUID.jar"/>
+    <path refid="library.vault.classpath"/>
+  </path>
+  
+  <path id="neptunex_revival.runtime.production.module.classpath">
+    <pathelement location="${neptunex_revival.output.dir}"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Spigots/spigot-1.12.1.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Economy/Vault.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/MassiveCore.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/FactionsUUID.jar"/>
+    <path refid="library.vault.classpath"/>
+  </path>
+  
+  <path id="neptunex_revival.module.classpath">
+    <path refid="${module.jdk.classpath.neptunex_revival}"/>
+    <pathelement location="${neptunex_revival.output.dir}"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Spigots/spigot-1.12.1.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Economy/Vault.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/MassiveCore.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/FactionsUUID.jar"/>
+    <path refid="library.vault.classpath"/>
+  </path>
+  
+  <path id="neptunex_revival.runtime.module.classpath">
+    <pathelement location="${neptunex_revival.output.dir}"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Spigots/spigot-1.12.1.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Economy/Vault.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/MassiveCore.jar"/>
+    <pathelement location="${basedir}/../../../Development/Minecraft/Factions/FactionsUUID.jar"/>
+    <path refid="library.vault.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.neptunex_revival">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.neptunex_revival">
+    <patternset refid="excluded.from.module.neptunex_revival"/>
+  </patternset>
+  
+  <path id="neptunex_revival.module.sourcepath">
+    <dirset dir="${module.neptunex_revival.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.neptunex_revival" depends="compile.module.neptunex_revival.production,compile.module.neptunex_revival.tests" description="Compile module NeptuneX Revival"/>
+  
+  <target name="compile.module.neptunex_revival.production" depends="register.custom.compilers" description="Compile module NeptuneX Revival; production classes">
+    <mkdir dir="${neptunex_revival.output.dir}"/>
+    <javac2 destdir="${neptunex_revival.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.neptunex_revival}/javac">
+      <compilerarg line="${compiler.args.neptunex_revival}"/>
+      <bootclasspath refid="neptunex_revival.module.bootclasspath"/>
+      <classpath refid="neptunex_revival.module.production.classpath"/>
+      <src refid="neptunex_revival.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.neptunex_revival"/>
+    </javac2>
+    
+    <copy todir="${neptunex_revival.output.dir}">
+      <fileset dir="${module.neptunex_revival.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.neptunex_revival.tests" depends="register.custom.compilers,compile.module.neptunex_revival.production" description="compile module NeptuneX Revival; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.neptunex_revival" description="cleanup module">
+    <delete dir="${neptunex_revival.output.dir}"/>
+    <delete dir="${neptunex_revival.testoutput.dir}"/>
+  </target>
+</project>

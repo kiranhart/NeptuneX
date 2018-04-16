@@ -1,16 +1,14 @@
 package com.shadebyte.neptunex.commands;
 
-import com.shadebyte.neptunex.api.NeptuneAPI;
-import com.shadebyte.neptunex.enums.Language;
-import com.shadebyte.neptunex.enums.Permissions;
-import com.shadebyte.neptunex.inventory.OresGUI;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
+
+import com.shadebyte.neptunex.enums.Language;
+import com.shadebyte.neptunex.enums.Permissions;
+import com.shadebyte.neptunex.inventory.OresGUI;
 
 public class OresCommand implements CommandExecutor {
 

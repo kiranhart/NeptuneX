@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Vault">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Development/Minecraft/Economy/Vault.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Development/Minecraft/Factions/FactionsUUID.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Development/Minecraft/Factions/MassiveCore.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Development/Minecraft/Spigots/spigot-1.12.1.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Development/Minecraft/Factions/MassiveCore.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Development/Minecraft/Spigots/spigot-1.12.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
+  </library>
+</component>

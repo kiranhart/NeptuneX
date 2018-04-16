@@ -1,8 +1,8 @@
 package com.shadebyte.neptunex;
 
-import com.shadebyte.neptunex.api.MCUpdate;
 import com.shadebyte.neptunex.api.NEconomy;
-import com.shadebyte.neptunex.api.SupportedPlugins;
+import com.shadebyte.neptunex.api.version.MCUpdate;
+import com.shadebyte.neptunex.api.version.SupportedPlugins;
 import com.shadebyte.neptunex.commands.*;
 import com.shadebyte.neptunex.enums.Language;
 import com.shadebyte.neptunex.events.*;
@@ -18,6 +18,7 @@ import com.shadebyte.neptunex.inventory.paginatedgui.types.PaginatedGUI;
 import com.shadebyte.neptunex.utils.ConfigWrapper;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.PluginManager;
@@ -34,6 +35,7 @@ public class Core extends JavaPlugin {
     private static Economy econ = null;
 
     private HashSet<Player> frozenPlayers = null;
+    private HashMap<Player, Material> auraBotCheck = null;
     private HashSet<Player> sellingChest = null;
     private HashMap<Player, PlayerInventory> staffModePlayers = null;
     private HashMap<Player, Integer> clicks = null;
@@ -171,6 +173,7 @@ public class Core extends JavaPlugin {
         clicks = new HashMap<>();
         editingVault = new HashMap<>();
         sellingChest = new HashSet<>();
+        auraBotCheck = new HashMap<>();
     }
 
     private void saveConfigFiles() {
@@ -223,5 +226,9 @@ public class Core extends JavaPlugin {
 
     public HashSet<Player> getSellingChest() {
         return sellingChest;
+    }
+
+    public HashMap<Player, Material> getAuraBotCheck() {
+        return auraBotCheck;
     }
 }

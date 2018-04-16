@@ -1,7 +1,10 @@
 package com.shadebyte.neptunex.api;
 
-import com.shadebyte.neptunex.Core;
-import com.shadebyte.neptunex.utils.NBTEditor;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -15,10 +18,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.shadebyte.neptunex.Core;
+import com.shadebyte.neptunex.api.version.Version;
+import com.shadebyte.neptunex.utils.NBTEditor;
 
 public class NeptuneAPI {
 
