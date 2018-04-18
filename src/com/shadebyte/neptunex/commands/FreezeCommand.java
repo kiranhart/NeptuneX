@@ -1,5 +1,6 @@
 package com.shadebyte.neptunex.commands;
 
+import com.shadebyte.neptunex.enums.Language;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -8,7 +9,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.shadebyte.neptunex.Core;
-import com.shadebyte.neptunex.enums.Language;
 import com.shadebyte.neptunex.enums.Permissions;
 import com.shadebyte.neptunex.inventory.FreezeGUI;
 

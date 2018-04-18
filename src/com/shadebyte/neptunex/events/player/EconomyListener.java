@@ -1,7 +1,6 @@
 package com.shadebyte.neptunex.events.player;
 
 import com.shadebyte.neptunex.Core;
-import com.shadebyte.neptunex.api.NEconomy;
 import com.shadebyte.neptunex.api.NeptuneAPI;
 import com.shadebyte.neptunex.enums.Language;
 import org.bukkit.ChatColor;

@@ -10,15 +10,12 @@ import com.shadebyte.neptunex.events.factions.CobwebLimiterListener;
 import com.shadebyte.neptunex.events.factions.CooldownsListener;
 import com.shadebyte.neptunex.events.factions.GenBucketListener;
 import com.shadebyte.neptunex.events.gui.NeptuneGUIListener;
-import com.shadebyte.neptunex.events.player.EconomyListener;
-import com.shadebyte.neptunex.events.player.PlayerArmorBreakListener;
-import com.shadebyte.neptunex.events.player.PlayerCPSCheckListener;
-import com.shadebyte.neptunex.events.player.StaffModeListener;
+import com.shadebyte.neptunex.events.player.*;
 import com.shadebyte.neptunex.inventory.paginatedgui.types.PaginatedGUI;
 import com.shadebyte.neptunex.utils.ConfigWrapper;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.PluginManager;
@@ -35,7 +32,7 @@ public class Core extends JavaPlugin {
     private static Economy econ = null;
 
     private HashSet<Player> frozenPlayers = null;
-    private HashMap<Player, Material> auraBotCheck = null;
+    private HashSet<Player>  auraBotCheck = null;
     private HashSet<Player> sellingChest = null;
     private HashMap<Player, PlayerInventory> staffModePlayers = null;
     private HashMap<Player, Integer> clicks = null;
@@ -120,6 +117,7 @@ public class Core extends JavaPlugin {
         pm.registerEvents(new EconomyListener(), this);
         pm.registerEvents(new GenBucketListener(), this);
         pm.registerEvents(new CooldownsListener(), this);
+        pm.registerEvents(new GlobalPlayerListener(), this);
     }
 
     private void initConfigurations() {
@@ -173,7 +171,7 @@ public class Core extends JavaPlugin {
         clicks = new HashMap<>();
         editingVault = new HashMap<>();
         sellingChest = new HashSet<>();
-        auraBotCheck = new HashMap<>();
+        auraBotCheck = new HashSet<>();
     }
 
     private void saveConfigFiles() {
@@ -228,7 +226,7 @@ public class Core extends JavaPlugin {
         return sellingChest;
     }
 
-    public HashMap<Player, Material> getAuraBotCheck() {
+    public HashSet<Player> getAuraBotCheck() {
         return auraBotCheck;
     }
 }

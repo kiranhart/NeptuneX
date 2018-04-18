@@ -32,8 +32,8 @@ public enum Permissions {
     XPBOTTLE_COMMAND("NeptuneX.cmd.xpbottle"),
     STAFF_MODE_COMMAND("NeptuneX.cmd.staffmode"),
 
+    CAPTCHA_COMMAND("NeptuneX.cmd.captcha"),
     SELL_CHEST_COMMAND("NeptuneX.cmd.sellchest"),
-
     FREEZE_COMMAND("NeptuneX.cmd.freeze");
 
     private String node;

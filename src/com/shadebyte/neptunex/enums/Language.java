@@ -76,6 +76,10 @@ public enum Language {
 
     COOLDOWN_GOLDEN_APPLE(Core.getLangFile().getConfig().getString("cooldowns.goldenapple")),
     COOLDOWN_GOD_APPLE(Core.getLangFile().getConfig().getString("cooldowns.godapple")),
+
+    BOT_CHECK_FAIL(Core.getLangFile().getConfig().getString("botcheck-fail")),
+    BOT_CHECK_COMPLETE(Core.getLangFile().getConfig().getString("botcheck-complete")),
+    BOT_CHECK_ASK(Core.getLangFile().getConfig().getString("botcheck-ask")),
     ;
 
     private String node;
@@ -161,5 +165,9 @@ public enum Language {
 
         setNode("cooldowns.goldenapple", "&c(!) {time} seconds left before you can eat other golden apple.");
         setNode("cooldowns.godapple", "&c(!) {time} seconds left before you can eat other god apple.");
+
+        setNode("botcheck-fail", "&c(!) {player} &bhas failed the bot/anti-mobaura captcha.");
+        setNode("botcheck-complete", "&b(!) Congratulations, you've successfully completed it.");
+        setNode("botcheck-ask", "&c(!) Please complete this captcha to continue.");
     }
 }

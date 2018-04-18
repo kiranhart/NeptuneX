@@ -1,0 +1,25 @@
+name: NeptuneX
+main: com.shadebyte.neptunex.Core
+version: 2.0
+author: Kiran Hart (TheCrystalSar)
+description: A Factions plugins to fit everyone's needs. Here's NeptuneX's Revival.
+
+commands:
+  block:
+  ores:
+  freeze:
+  withdraw:
+  xpbottle:
+  staffmode:
+  cps:
+  heal:
+  feed:
+  playervault:
+  jumpboost:
+  speed:
+  regen:
+  absorption:
+  nightvision:
+  voucher:
+  sellchest:
+  genbucket:
