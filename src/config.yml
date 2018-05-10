@@ -106,11 +106,35 @@ custom-mob-health:
 #Auto Lapis
 auto-lapis-to-enchantment-tables: true
 
+#Faction
+faction:
+  flight-in-own-claim: true
+  enter-msg:
+    enabled: true
+    msg:
+      - ""
+      - "&b&lJust entered new faction territory"
+      - ""
+      - "&6&lFaction&f: &b{faction_name}"
+      - "&e&lDescription&f: "
+      - "&b{faction_desc}"
+      - ""
+  leave-msg:
+    enabled: true
+    msg:
+      - ""
+      - "&b&lJust left faction territory"
+      - ""
+      - "&6&lFaction&f: &b{faction_name}"
+      - "&e&lDescription&f: "
+      - "&b{faction_desc}"
+      - ""
+
 #Elevator
 elevator:
   enabled: true
+  max-distance: 6
   top-block: "STONE_PLATE:0"
-  bottom-block: "QUARTZ_BLOCK:0"
   ascend-sound: "BAT_TAKEOFF"
   descend-sound: "PLAYER_SMALL_FALL"
 

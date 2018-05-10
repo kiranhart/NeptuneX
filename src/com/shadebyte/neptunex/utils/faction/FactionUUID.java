@@ -51,6 +51,20 @@ public class FactionUUID implements FactionUtil {
     }
 
     @Override
+    public String getFactionNameAtLocation(Player p) {
+        FPlayer fp = FPlayers.getInstance().getByPlayer(p);
+        Faction fac = Board.getInstance().getFactionAt(fp.getLastStoodAt());
+        return fac.getTag();
+    }
+
+    @Override
+    public String getFactionDescriptionAtLocation(Player p) {
+        FPlayer fp = FPlayers.getInstance().getByPlayer(p);
+        Faction fac = Board.getInstance().getFactionAt(fp.getLastStoodAt());
+        return fac.getDescription();
+    }
+
+    @Override
     public List<Player> getCurrentMembers(Player p) {
         if (!playerIsInFaction(p)) {
             return null;

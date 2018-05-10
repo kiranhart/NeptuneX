@@ -1,28 +1,25 @@
 package com.shadebyte.neptunex;
 
 import com.shadebyte.neptunex.api.NEconomy;
-import com.shadebyte.neptunex.api.version.MCUpdate;
 import com.shadebyte.neptunex.api.version.SupportedPlugins;
 import com.shadebyte.neptunex.commands.*;
 import com.shadebyte.neptunex.enums.Language;
 import com.shadebyte.neptunex.events.*;
-import com.shadebyte.neptunex.events.factions.CobwebLimiterListener;
-import com.shadebyte.neptunex.events.factions.CooldownsListener;
-import com.shadebyte.neptunex.events.factions.GenBucketListener;
+import com.shadebyte.neptunex.events.factions.*;
 import com.shadebyte.neptunex.events.gui.NeptuneGUIListener;
 import com.shadebyte.neptunex.events.player.*;
 import com.shadebyte.neptunex.inventory.paginatedgui.types.PaginatedGUI;
 import com.shadebyte.neptunex.utils.ConfigWrapper;
+import com.shadebyte.neptunex.utils.faction.FactionUUID;
+import com.shadebyte.neptunex.utils.faction.FactionUtil;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -30,6 +27,7 @@ public class Core extends JavaPlugin {
 
     private static Core instance = null;
     private static Economy econ = null;
+    private FactionUtil factionUtil;
 
     private HashSet<Player> frozenPlayers = null;
     private HashSet<Player>  auraBotCheck = null;
@@ -69,10 +67,6 @@ public class Core extends JavaPlugin {
 
         NEconomy.initializeDefaultPrices(2.5);
 
-        try {
-            MCUpdate mc = new MCUpdate(this);
-        } catch (IOException ex) {
-        }
     }
 
     @Override
@@ -99,6 +93,7 @@ public class Core extends JavaPlugin {
         getCommand("voucher").setExecutor(new VoucherCommand());
         getCommand("sellchest").setExecutor(new SellChestCommand());
         getCommand("genbucket").setExecutor(new GenBucketCommand());
+        getCommand("captcha").setExecutor(new CaptchaCommand());
     }
 
     public void initEvents() {
@@ -118,6 +113,8 @@ public class Core extends JavaPlugin {
         pm.registerEvents(new GenBucketListener(), this);
         pm.registerEvents(new CooldownsListener(), this);
         pm.registerEvents(new GlobalPlayerListener(), this);
+        pm.registerEvents(new FactionFlyListener(), this);
+        pm.registerEvents(new FactionLocationListener(), this);
     }
 
     private void initConfigurations() {
@@ -172,6 +169,8 @@ public class Core extends JavaPlugin {
         editingVault = new HashMap<>();
         sellingChest = new HashSet<>();
         auraBotCheck = new HashSet<>();
+
+        factionUtil = new FactionUUID();
     }
 
     private void saveConfigFiles() {
@@ -228,5 +227,9 @@ public class Core extends JavaPlugin {
 
     public HashSet<Player> getAuraBotCheck() {
         return auraBotCheck;
+    }
+
+    public FactionUtil getFactionUtil() {
+        return factionUtil;
     }
 }

@@ -34,9 +34,6 @@ public class GlobalPlayerListener implements Listener {
     public void captchaCheckOnJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
-        Bukkit.getOnlinePlayers().forEach(all -> all.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lYOU'RE RUNNING A PIRATED VERSION OF NeptuneX")));
-        Bukkit.getOnlinePlayers().forEach(all -> all.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&The IP has been logged, for blacklisting")));
-
         if (!Core.getInstance().getConfig().getBoolean("botcheck.captcha-on-join")) {
             return;
         }

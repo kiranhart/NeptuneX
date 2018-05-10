@@ -16,6 +16,10 @@ public interface FactionUtil {
 
     String getFactionName(Player p);
 
+    String getFactionNameAtLocation(Player p);
+
+    String getFactionDescriptionAtLocation(Player p);
+
     List<Player> getCurrentMembers(Player p);
 
     int getTotalMembers(Player p);
