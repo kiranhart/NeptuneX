@@ -1,7 +1,7 @@
 name: NeptuneX
 main: com.shadebyte.neptunex.Core
 version: 2.0
-author: Kiran Hart (TheCrystalSar)
+authors: [Kiran Hart (TheCrystalStar), CJ Nelson (IHyperionI)]
 description: A Factions plugins to fit everyone's needs. Here's NeptuneX's Revival.
 
 commands:
@@ -24,3 +24,5 @@ commands:
   sellchest:
   genbucket:
   captcha:
+  creeper:
+  giveall:

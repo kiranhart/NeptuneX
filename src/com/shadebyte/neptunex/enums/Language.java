@@ -81,6 +81,16 @@ public enum Language {
     BOT_CHECK_COMPLETE(Core.getLangFile().getConfig().getString("botcheck.complete")),
     BOT_CHECK_ASK(Core.getLangFile().getConfig().getString("botcheck.ask")),
     BOT_CHECK_SENT(Core.getLangFile().getConfig().getString("botcheck.sent")),
+
+    GIVEALL(Core.getLangFile().getConfig().getString("giveall")),
+    CREEPER_SPAWN(Core.getLangFile().getConfig().getString("creeper-spawn")),
+
+    NAMETAG_SELF(Core.getLangFile().getConfig().getString("nametag.self")),
+    NAMETAG_ALL(Core.getLangFile().getConfig().getString("nametag.all")),
+    NAMETAG_SENDER(Core.getLangFile().getConfig().getString("nametag.sender")),
+    NAMETAG_PLAYER(Core.getLangFile().getConfig().getString("nametag.player")),
+    NAMETAG_CANCELED(Core.getLangFile().getConfig().getString("nametag.canceled")),
+    NAMETAG_BLOCKED(Core.getLangFile().getConfig().getString("nametag.blocked")),
     ;
 
     private String node;
@@ -163,6 +173,8 @@ public enum Language {
         setNode("sellchest.sell", "&b(!) Left-Click the chest to sell it's contents.");
 
         setNode("cobweb-limit", "&c(!) Cannot place more than {amount} cobwebs on the same y axis.");
+        setNode("giveall", "&b(!) You gave every &3x{amount} &bof the item in your hand.");
+        setNode("creeper-spawn", "&b(!) A creeper has been spawned at your location");
 
         setNode("cooldowns.goldenapple", "&c(!) {time} seconds left before you can eat other golden apple.");
         setNode("cooldowns.godapple", "&c(!) {time} seconds left before you can eat other god apple.");
@@ -171,5 +183,13 @@ public enum Language {
         setNode("botcheck.complete", "&b(!) Congratulations, you've successfully completed it.");
         setNode("botcheck.ask", "&c(!) Please complete this captcha to continue.");
         setNode("botcheck.sent", "&b(!) Sent a captcha test to &b{player}");
+
+
+        setNode("nametag.self", "&3&l(!) &bYou have given yourself &3x{amount} &bnametag(s)");
+        setNode("nametag.all", "&3&l(!) &bYou have given x{amount} &bnametag(s).");
+        setNode("nametag.sender", "&3&l(!) &bYou have given &3{player} x{amount} &bnametag(s).");
+        setNode("nametag.player", "&3&l(!) &bYou have given x{amount} &bnametag(s).");
+        setNode("nametag.canceled", "&3&l(!) &bYour nametag has been given back to you.");
+        setNode("nametag.blocked", "&c&l(!) &cYou're trying to do something wrong with that tag.");
     }
 }

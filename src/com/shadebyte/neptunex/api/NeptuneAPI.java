@@ -1,10 +1,8 @@
 package com.shadebyte.neptunex.api;
 
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import com.shadebyte.neptunex.Core;
+import com.shadebyte.neptunex.api.version.Version;
+import com.shadebyte.neptunex.utils.NBTEditor;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -18,9 +16,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.shadebyte.neptunex.Core;
-import com.shadebyte.neptunex.api.version.Version;
-import com.shadebyte.neptunex.utils.NBTEditor;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class NeptuneAPI {
 
@@ -52,6 +51,27 @@ public class NeptuneAPI {
         return instance;
     }
 
+
+    public ItemStack nametag() {
+        ItemStack is = new ItemStack(Material.valueOf(Core.getInstance().getConfig().getString("nametags.item")), 1, (short) Core.getInstance().getConfig().getInt("nametags.data"));
+        ItemMeta ismeta = is.getItemMeta();
+        ismeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Core.getInstance().getConfig().getString("nametags.name")));
+        ArrayList<String> lore = new ArrayList<>();
+        for (String all : Core.getInstance().getConfig().getStringList("nametags.lore")) {
+            lore.add(ChatColor.translateAlternateColorCodes('&', all));
+        }
+        ismeta.setLore(lore);
+        is.setItemMeta(ismeta);
+        is = NBTEditor.setItemTag(is, "Valid", "NeptuneItemTag");
+        return is;
+    }
+
+    public boolean isItemTag(ItemStack is) {
+        if (NBTEditor.getItemTag(is, "NeptuneItemTag") != null) {
+            return true;
+        }
+        return false;
+    }
 
     public void setXpLevel(int level, float cExp) {
         if (level > 30) {

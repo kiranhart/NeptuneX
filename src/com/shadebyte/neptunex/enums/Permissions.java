@@ -7,8 +7,10 @@ public enum Permissions {
 
     BLOCK_COMMAND("NeptuneX.cmd.block"),
     PLAYERVAULT_COMMAND("NeptuneX.cmd.playervault"),
+    GIVEALL_COMMAND("NeptuneX.cmd.giveall"),
 
     GENBUCKET_COMMAND("NeptuneX.cmd.genbucket"),
+    CREEPER_COMMAND("NeptuneX.cmd.creeper"),
 
     HEAL_COMMAND("NeptuneX.cmd.heal"),
     FEED_COMMAND("NeptuneX.cmd.feed"),

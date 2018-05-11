@@ -32,6 +32,7 @@ public class Core extends JavaPlugin {
     private HashSet<Player> frozenPlayers = null;
     private HashSet<Player>  auraBotCheck = null;
     private HashSet<Player> sellingChest = null;
+    private HashSet<Player> usingNameTag = null;
     private HashMap<Player, PlayerInventory> staffModePlayers = null;
     private HashMap<Player, Integer> clicks = null;
     private HashMap<Player, Integer> editingVault = null;
@@ -94,6 +95,8 @@ public class Core extends JavaPlugin {
         getCommand("sellchest").setExecutor(new SellChestCommand());
         getCommand("genbucket").setExecutor(new GenBucketCommand());
         getCommand("captcha").setExecutor(new CaptchaCommand());
+        getCommand("giveall").setExecutor(new GiveallCommand());
+        getCommand("creeper").setExecutor(new GiveallCommand());
     }
 
     public void initEvents() {
@@ -115,6 +118,8 @@ public class Core extends JavaPlugin {
         pm.registerEvents(new GlobalPlayerListener(), this);
         pm.registerEvents(new FactionFlyListener(), this);
         pm.registerEvents(new FactionLocationListener(), this);
+        pm.registerEvents(new NameTagListener(), this);
+        pm.registerEvents(new PlayerCreeperDamageListener(), this);
     }
 
     private void initConfigurations() {
@@ -169,6 +174,7 @@ public class Core extends JavaPlugin {
         editingVault = new HashMap<>();
         sellingChest = new HashSet<>();
         auraBotCheck = new HashSet<>();
+        usingNameTag = new HashSet<>();
 
         factionUtil = new FactionUUID();
     }
@@ -227,6 +233,10 @@ public class Core extends JavaPlugin {
 
     public HashSet<Player> getAuraBotCheck() {
         return auraBotCheck;
+    }
+
+    public HashSet<Player> getUsingNameTag() {
+        return usingNameTag;
     }
 
     public FactionUtil getFactionUtil() {

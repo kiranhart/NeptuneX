@@ -106,6 +106,12 @@ custom-mob-health:
 #Auto Lapis
 auto-lapis-to-enchantment-tables: true
 
+#Creeper Command
+creepercmd:
+  use-nametag: true
+  nametag: "&b&l{player}&b&l's &3Creeper"
+  other-players-can-damage: true
+
 #Faction
 faction:
   flight-in-own-claim: true
@@ -130,13 +136,52 @@ faction:
       - "&b{faction_desc}"
       - ""
 
-#Elevator
-elevator:
-  enabled: true
-  max-distance: 6
-  top-block: "STONE_PLATE:0"
-  ascend-sound: "BAT_TAKEOFF"
-  descend-sound: "PLAYER_SMALL_FALL"
+#Name Tags
+nametags:
+  item: "NAME_TAG"
+  data: 0
+  name: "&b&lItem Nametag &7(Right Click)"
+  lore:
+    - "&7Rename and customize your equipment."
+  blocked-words:
+    - "ass"
+    - "rape"
+    - "rapist"
+    - "raper"
+    - "bitch"
+    - "whore"
+    - "kys"
+    - "kms"
+    - "asshole"
+    - "cunt"
+    - "dyke"
+    - "jew"
+    - "bastard"
+    - "assfucker"
+    - "clit"
+    - "pussy"
+    - "penis"
+    - "vagina"
+    - "dick"
+    - "cock"
+    - "jackass"
+    - "cockfucker"
+    - "autism"
+    - "dickhead"
+    - "fuck"
+    - "fucker"
+    - "fucking"
+    - "buttfucker"
+    - "shit"
+  blocked-items:
+    - "NAME_TAG:0"
+    - "MOB_SPAWNER:0"
+  cancel-word: "cancel"
+  instructions:
+    - "&bHold the item you want to rename and type in chat"
+    - "&bwith color codes, what you want to rename your item."
+    - ""
+    - "&bTo cancel renaming, type '&3cancel&b'"
 
 #Economy
 sellchest:
